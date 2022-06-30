@@ -27,4 +27,4 @@ you can use.
 - 8.0.29, 8.0, 8, latest, 8.0.29-debian, 8.0-debian, 8-debian, debian
 - 5.7.38-oracle, 5.7-oracle, 5-oracle
 - 5.7.38, 5.7, 5, 5.7.38-debian, 5.7-debian, 5-debian
-
+- latest
