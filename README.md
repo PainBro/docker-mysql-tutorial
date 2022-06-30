@@ -7,4 +7,9 @@ you can follow along with this tutorial or with the slideshow below.
 ## Prerequisites
 For this tutorial it is assumed that you already have docker setup on your computer and know the basics of how to use it.
 
-## How to Begin
+## Step 1 - Creating a MySQL Image
+This step is farely simple. Once you have docker setup on your device, open your terminal and use the code below to create your image.
+
+```
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+```
