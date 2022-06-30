@@ -11,5 +11,5 @@ For this tutorial it is assumed that you already have docker setup on your compu
 This step is farely simple. Once you have docker setup on your device, open your terminal and use the code below to create your image.
 
 ```
-docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+docker run --name [YOUR IMAGE NAME] -e MYSQL_ROOT_PASSWORD=[YOUR MYSQL PASSWORD] -d mysql:tag
 ```
