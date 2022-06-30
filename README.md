@@ -8,8 +8,22 @@ you can follow along with this tutorial or with the slideshow below.
 For this tutorial it is assumed that you already have docker setup on 
 your computer and know the basics of how to use it.
 
-## Step 1 - Creating a MySQL Image
-This step is farely simple. Once you have docker setup on your device, 
+## Step 1 - Creating a MySQL Container
+
+#### Making the Image
+
+First, you will have to pull mysql to docker. You can do this py using 
+the following code in your terminal.
+
+```
+docker pull mysql
+```
+
+This will create a mysql image to use in creating your container.
+
+#### Making the Container
+
+Next, we have to setup the container This step is farely simple. Once you have docker setup on your device, 
 open your terminal and use the code below to create your image.
 
 ```
