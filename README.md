@@ -81,7 +81,7 @@ mysql - This tells docker to use the mysql image
 -uroot - This specifies that we want to have a mysql session that connects to the root
 
 -p -This tells the command that a password is required. 
-- If you leave it empty, it will prompt you for the password in a safe, no show way. 
+- If you leave it empty, it will prompt you for the password in a private password protector. 
 - If you put your password immediately after, it will run it with that password, but having it in the command could be dangerous if you're accessing private info.
 
 Because we wont be using any private or dangerous data for this example and we dont care if others can access this password, we will input our password with the command. But in any professional setting we recomend not doing so, and using the provided password protective option.
