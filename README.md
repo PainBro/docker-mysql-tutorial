@@ -50,3 +50,5 @@ For this example, we will be using the code below.
 ```
 docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=mysqlpass -d mysql:latest
 ```
+
+## Step 2 - Opening your container
