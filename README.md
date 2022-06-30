@@ -52,3 +52,42 @@ docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=mysqlpass -d mysql:late
 ```
 
 ## Step 2 - Opening your container
+In this step we will go over how to open your new container and gain access to mysql.
+
+To open the container we can use the code below
+
+```
+docker exec -it [your-container-name] mysql -uroot -p
+```
+or
+```
+docker exec -it [your-container-name] mysql -uroot -p[your mysql password]
+```
+
+We'll run through this step by step
+
+docker - This is specifying to our terminal that we want to use docker
+
+exec - This tells docker that we want to execute an already existing container
+
+-it - This is actually a combination of 2 commands -i and -t. 
+- -i specifies that we want an interactive enviroment,
+- -t specifies that we want that envirmonent to be tty(teletypewriter)
+
+[your-container-name] - This is the name you gave to your container earlier
+
+mysql - This tells docker to use the mysql image
+
+-uroot - This specifies that we want to have a mysql session that connects to the root
+
+-p -This tells the command that a password is required. 
+- If you leave it empty, it will prompt you for the password in a safe, no show way. 
+- If you put your password immediately after, it will run it with that password, but having it in the command could be dangerous if you're accessing private info.
+
+Because we wont be using any private or dangerous data for this example and we dont care if others can access this password, we will input our password with the command. But in any professional setting we recomend not doing so, and using the provided password protective option.
+
+Below is the command to access our container.
+
+```
+docker exec -it mysql-container mysql -uroot -pmysqlpass
+```
