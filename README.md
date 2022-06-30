@@ -28,3 +28,9 @@ you can use.
 - 5.7.38-oracle, 5.7-oracle, 5-oracle
 - 5.7.38, 5.7, 5, 5.7.38-debian, 5.7-debian, 5-debian
 - latest
+
+For this example, we will be using the code below.
+
+```
+docker run --name mysql-conatiner -e MYSQL_ROOT_PASSWORD=mysqlpass -d mysql:latest
+```
