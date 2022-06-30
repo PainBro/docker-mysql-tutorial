@@ -32,5 +32,5 @@ you can use.
 For this example, we will be using the code below.
 
 ```
-docker run --name mysql-conatiner -e MYSQL_ROOT_PASSWORD=mysqlpass -d mysql:latest
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=mysqlpass -d mysql:latest
 ```
