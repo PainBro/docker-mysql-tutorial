@@ -25,7 +25,7 @@ This will create a mysql image to use in creating your container.
 
 ### Making the Container
 
-Next, we have to setup the container This step is farely simple. Once you have docker setup on your device, 
+Next, we have to set up the container. This step is farely simple. Once you have docker setup on your device, 
 open your terminal and use the code below to create your image.
 
 ```
