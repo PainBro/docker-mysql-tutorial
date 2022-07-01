@@ -107,6 +107,8 @@ Below is the command to access our container.
 docker exec -it mysql-container mysql -uroot -pmysqlpass
 ```
 
+Once we have that done, our terminal that will open into a mysql command prompt which we can use normal mysql commands on.
+
 ## Step FIN - Stopping your container
 Now that we are done using our container, we can stop it so that it wont use any resources on our computer
 
