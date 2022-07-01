@@ -63,7 +63,7 @@ you should get something similar to the table below
 
 ```
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                 NAMES
-c0nta1n3r1d0   mysql:latest   "docker-entrypoint.s…"   1 minutes ago   Up 1 minutes   3306/tcp, 33060/tcp   mysql-container
+c0nta1n3r1d0   mysql:latest   "docker-entrypoint.s…"   1 minutes ago    Up 1 minutes    3306/tcp, 33060/tcp   mysql-container
 ```
 
 ## Step 2 - Opening your container
