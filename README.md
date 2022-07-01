@@ -109,8 +109,16 @@ docker exec -it mysql-container mysql -uroot -pmysqlpass
 
 Once we have that done, our terminal that will open into a mysql command prompt which we can use normal mysql commands on.
 
+When we are done with mysql, we can input the command below.
+
+```
+exit;
+```
+
+this will exit the mysql interactive enviroment and send us back to the terminal.
+
 ## Step FIN - Stopping your container
-Now that we are done using our container, we can stop it so that it wont use any resources on our computer
+Now that we are done using our container, we can stop it so that it wont use any resources on our computer. Keep in mind you will have to restart it to use mysql again.
 
 ```
 docker stop [your-container-name]
