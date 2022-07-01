@@ -13,8 +13,8 @@ In this step we will go over how to pull a mysql image to docker and make
 a container from it.
 
 ### Making the Image
-This step isn't nessesairy with the current docker desktop, because it will 
-automatially do this when you attempt to create a container.
+This step isn't necessary with the current docker desktop, because it will 
+automatically do this when you attempt to create a container.
 
 First, you will have to pull mysql to docker. You can do this py using 
 the following code in your terminal.
@@ -27,7 +27,7 @@ This will create a mysql image to use in creating your container.
 
 ### Making the Container
 
-Next, we have to setup the container This step is farely simple. Once you have docker setup on your device, 
+Next, we have to set up the container. This step is fairly simple. Once you have docker setup on your device, 
 open your terminal and use the code below to create your image.
 
 ```
@@ -66,7 +66,7 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS  
 c0nta1n3r1d0   mysql:latest   "docker-entrypoint.s…"   1 minutes ago    Up 1 minutes    3306/tcp, 33060/tcp   mysql-container
 ```
 
-## Step 2 - Opening your container
+## Step 2 - Using your container
 In this step we will go over how to open your new container and gain access to mysql.
 
 To open the container we can use the code below
@@ -86,8 +86,8 @@ docker - This is specifying to our terminal that we want to use docker
 exec - This tells docker that we want to execute an already existing container
 
 -it - This is actually a combination of 2 commands -i and -t. 
-- -i specifies that we want an interactive enviroment,
-- -t specifies that we want that envirmonent to be tty(teletypewriter)
+- -i specifies that we want an interactive environment,
+- -t specifies that we want that environment to be tty(teletypewriter)
 
 [your-container-name] - This is the name you gave to your container earlier
 
@@ -99,10 +99,34 @@ mysql - This tells docker to use the mysql image
 - If you leave it empty, it will prompt you for the password in a private password protector. 
 - If you put your password immediately after, it will run it with that password, but having it in the command could be dangerous if you're accessing private info.
 
-Because we wont be using any private or dangerous data for this example and we dont care if others can access this password, we will input our password with the command. But in any professional setting we recomend not doing so, and using the provided password protective option.
+Because we won't be using any private or dangerous data for this example and we dont care if others can access this password, we will input our password with the command. But in any professional setting we recommend not doing so, and using the provided password protective option.
 
 Below is the command to access our container.
 
 ```
 docker exec -it mysql-container mysql -uroot -pmysqlpass
 ```
+
+Once we have that done, our terminal will open into a mysql command prompt which we can use normal mysql commands on.
+
+When we are done with mysql, we can input the command below.
+
+```
+exit;
+```
+
+this will exit the mysql interactive environment and send us back to the terminal.
+
+## Step FIN - Stopping your container
+Now that we are done using our container, we can stop it so that it wont use any resources on our computer. Keep in mind you will have to restart it to use mysql again.
+
+```
+docker stop [your-container-name]
+```
+
+For our example, we will use the following code in our terminal
+
+```
+docker stop mysql-container
+```
+
