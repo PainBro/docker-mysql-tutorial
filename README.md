@@ -13,6 +13,8 @@ In this step we will go over how to pull a mysql image to docker and make
 a container from it.
 
 ### Making the Image
+This step isn't nessesairy with the current docker desktop, because it will 
+automatially do this when you attempt to create a container.
 
 First, you will have to pull mysql to docker. You can do this py using 
 the following code in your terminal.
@@ -25,7 +27,7 @@ This will create a mysql image to use in creating your container.
 
 ### Making the Container
 
-Next, we have to set up the container. This step is farely simple. Once you have docker setup on your device, 
+Next, we have to setup the container This step is farely simple. Once you have docker setup on your device, 
 open your terminal and use the code below to create your image.
 
 ```
@@ -45,11 +47,18 @@ you can use.
 - 5.7.38, 5.7, 5, 5.7.38-debian, 5.7-debian, 5-debian
 - latest
 
+You can also leave :[tag] off completely to use the default tag
+
 For this example, we will be using the code below.
 
 ```
 docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=mysqlpass -d mysql:latest
 ```
+
+### Confirming
+
+You can use ```docker ps``` to confirm that your container is runing
+
 
 ## Step 2 - Opening your container
 In this step we will go over how to open your new container and gain access to mysql.
