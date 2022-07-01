@@ -66,7 +66,7 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS  
 c0nta1n3r1d0   mysql:latest   "docker-entrypoint.s…"   1 minutes ago    Up 1 minutes    3306/tcp, 33060/tcp   mysql-container
 ```
 
-## Step 2 - Opening your container
+## Step 2 - Using your container
 In this step we will go over how to open your new container and gain access to mysql.
 
 To open the container we can use the code below
@@ -105,4 +105,17 @@ Below is the command to access our container.
 
 ```
 docker exec -it mysql-container mysql -uroot -pmysqlpass
+```
+
+## Step FIN - Stopping your container
+Now that we are done using our container, we can stop it so that it wont use any resources on our computer
+
+```
+docker stop [your-container-name]
+```
+
+For our example, we will use the following code in our terminal
+
+```
+docker stop mysql-container
 ```
