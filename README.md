@@ -57,8 +57,14 @@ docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=mysqlpass -d mysql:late
 
 ### Confirming
 
-You can use ```docker ps``` to confirm that your container is runing
+You can use ```docker ps``` in your terminal to confirm that your container is runing
 
+you should get something similar to the table below
+
+```
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                 NAMES
+c0nta1n3r1d0   mysql:latest   "docker-entrypoint.s…"   1 minutes ago   Up 1 minutes   3306/tcp, 33060/tcp   mysql-container
+```
 
 ## Step 2 - Opening your container
 In this step we will go over how to open your new container and gain access to mysql.
