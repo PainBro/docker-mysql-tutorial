@@ -6,8 +6,10 @@ services:
     environment:
       MYSQL_HOST_AUTH_METHOD: trust
       MYSQL_ROOT_PASSWORD: password123
-    # volumes:   
-    #   - ./volumeToAttach:/mysqldb
+    volumes:
+      - "./mysql_init/1.sql:/docker-entrypoint-initdb.d/1.sql"
+
+      # - ./volumeToAttach:/mysqldb
     #   # - ./var/lib/mysql-files:/var/lib/mysql-files/
     ports:
       - '3305:3305'
