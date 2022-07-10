@@ -7,14 +7,15 @@ services:
       MYSQL_HOST_AUTH_METHOD: trust
       MYSQL_ROOT_PASSWORD: password123
     volumes:
-      - "./mysql_init/1.sql:/docker-entrypoint-initdb.d/1.sql"
+      - ./mysql_init/1.sql:/docker-entrypoint-initdb.d/1.sql
 
       # - ./volumeToAttach:/mysqldb
     #   # - ./var/lib/mysql-files:/var/lib/mysql-files/
     ports:
       - '3305:3305'
     networks:
-      - network_ml
+      network_ml:
+        ipv4_address: 10.5.0.5
 
   sqlpad:
     container_name: mysqlpad_ml
@@ -24,12 +25,21 @@ services:
     environment:
       SQLPAD_ADMIN: admin@sql.pad
       SQLPAD_ADMIN_PASSWORD: password123
+      SQLPAD_CONFIG: myConfig.env
+      # SQLPAD_CONNECTIONS__mysqlpad_ml__name="pickle"
     ports:
       - '3000:3000'
-    # volumes:
+    volumes:
+      - ./sqlpad_env_file/my.env:/myConfig.env
     #   - ./ml_space:/sqlpad
     networks:
-      - network_ml
+      network_ml:
+        ipv4_address: 10.5.0.6
 
 networks:
   network_ml:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
