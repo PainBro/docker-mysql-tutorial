@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  mysqldb:
+  db:
     container_name: mysql_server
     image: mysql/mysql-server:latest
     environment:
@@ -18,18 +18,16 @@ services:
     container_name: mysqlpad_ml
     image: sqlpad/sqlpad:master
     depends_on:
-      - mysql_server
+      - db
     environment:
       SQLPAD_ADMIN: admin@sql.pad
       SQLPAD_ADMIN_PASSWORD: password123
     ports:
       - '3000:3000'
-    volumes:
-      - ./ml_space:/sqlpad
+    # volumes:
+    #   - ./ml_space:/sqlpad
     networks:
       - network_ml
-
-
 
 networks:
   network_ml:
