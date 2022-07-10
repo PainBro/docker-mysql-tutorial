@@ -4,8 +4,8 @@ services:
     container_name: mysql_server
     image: mysql/mysql-server:latest
     environment:
-      MYSQL_ROOT_PASSWORD: password123
       MYSQL_HOST_AUTH_METHOD: trust
+      MYSQL_ROOT_PASSWORD: password123
     # volumes:   
     #   - ./volumeToAttach:/mysqldb
     #   # - ./var/lib/mysql-files:/var/lib/mysql-files/

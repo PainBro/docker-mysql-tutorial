@@ -13,3 +13,11 @@ update mysql.user set host = '%' where user='root';
 GRANT ALL ON *.* TO 'root'@'%';
 
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'mysqlpass';
+
+
+
+How to run the docker-compose:
+docker-compose -p mycomposer -f docker-compose.yml up
+
+How to execute sql scripts on container startup:
+https://iamvickyav.medium.com/mysql-init-script-on-docker-compose-e53677102e48
