@@ -151,6 +151,17 @@ GRANT ALL ON *.* TO 'root'@'%';
 
 Now we have our mysql container ready to connect to sqlpad.
 
+## Connecting
+Now that we have our containers set up, we just need to connect them.
+
+First, in your browser, click new connection in the upper left of your browser. then click new connection from the dropdown menu
+
+![](sqlpad_browser1.PNG)
+
+Now you input the information on your connection you want to make. Input the connection name you want to use for sqlpad, then select mysql2 as your driver.
+
+Once you've do that more input fields will show up. Input your mysql ip address in the Host/Server/IPaddress field. You can find this in your detailed network information.
+
 to see your detailed network information for docker use the template below.
 
 ```
@@ -162,3 +173,17 @@ For this example we can use the code
 ```
 docker network inspect mynet
 ```
+
+Now that we've done that, we can use the IPv4 address for our mysql container as shown below.
+
+![](sqlpad_networkInfo.PNG)
+
+Once you've put that in, put "root" as the username and your mysql password as the password.
+
+![](sqlpad_browser1.PNG)
+
+Then scroll donw and check the box labeled "Do not validate server certificate. (Don't use this for production)"
+
+Hit test and you should get a green checkmark. Hit save, and your done. 
+
+You can now run sql code on your browser just like you would with mysql.
