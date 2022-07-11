@@ -17,7 +17,9 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'mysqlpass';
 
 
 How to run the docker-compose:
+If it's having trouble working, use the first command. If it's consistently working, the second one is fine.
 docker-compose -p mycomposer -f docker-compose.yml up
+docker-compose -p mycomposer -f docker-compose.yml up -d
 
 How to execute sql scripts on container startup:
 https://iamvickyav.medium.com/mysql-init-script-on-docker-compose-e53677102e48
