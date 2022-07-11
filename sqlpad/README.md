@@ -71,3 +71,55 @@ The url will be ```http://localhost[yourMainPort]``` it can be typed in like sho
 
 ![](sqlpad_url.PNG)
 
+Once you have done that, you should see a simple login screen like the one below. Log in with the email and password you set before, and you will have access to sqlpad.
+
+![](sqlpad_login.PNG)
+
+## Setting up MySQL
+Although we have a UI, we don't have anything for the UI to affect. So we will make a mysql container for it to connect to.
+
+### Creating a MySQL Container
+Now that wr have SQLpad ready, we need a mysql container to connect to. Below is a template for the code to create a mysql container.
+
+```
+docker run --name=[mysqlContainerName] --publish [desiredPort] --env MYSQL_ROOT_PASSWORD=[yourMysqlRootPass] --detach --volume [your/desired/file/path] --network=[yourNetworkName] -e MYSQL_HOST_AUTH_METHOD=trust mysql/mysql-server:[desiredMysqlVersion]
+```
+
+Below explains what each portion of this code does
+
+- docker run - Tells the terminal to run a docker command
+- --name=[mysqlContainerName] - Sets the name of a new container
+- --publish [desiredPort] - Sets the port you want your container to work through
+- --env MYSQL_ROOT_PASSWORD=[yourMysqlRootPass] - Sets a root password for your mysql container
+- --detach - tells docker to run this in the background of your terminal
+- --volume [your/desired/file/path] - tells docker where to store the ------------
+- --network=[yourNetworkName] - Tells the container to use a network
+- -e MYSQL_HOST_AUTH_METHOD=trust - Makes mysql trust your inputs that could endanger data
+- mysql/mysql-server:[desiredMysqlVersion] - Specifies what type of container your making and which version
+
+Below is the code we will use for this example
+
+```
+docker run --name=pickle --publish 331:331 --env MYSQL_ROOT_PASSWORD=mysqlpass --detach --volume /root/docker/mysql1/conf.d:/etc/mysql/conf.d --network=mynet -e MYSQL_HOST_AUTH_METHOD=trust mysql/mysql-server:latest
+```
+
+now if you run ```docker ps``` you should have your sqlpad container and your mysql container
+
+### Getting MySQL Ready
+Although we have a mysql container, it still won't want to connect, thats because the container comes with some barriers to protect data.
+
+First, we'll have to start up our mysql container so that we can talk to it. We can do that using the template below where [yourMysqlContainerName] is the name of your container and [yourMysqlRootPass] is the password you set before.
+
+```
+docker exec -it [yourMysqlContainerName] mysql -uroot -p[yourMysqlRootPass]
+```
+
+Below is the code for our example
+
+```
+docker exec -it pickle mysql -uroot -p
+```
+
+This should pull up a mysql terminal like shown below.
+
+![](sqlpad_mysql.PNG)
