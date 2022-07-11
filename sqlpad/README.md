@@ -69,5 +69,5 @@ CONTAINER ID   IMAGE                  COMMAND                CREATED         STA
 now that we have sqlpad running we can log in through our browser. 
 The url will be ```http://localhost[yourMainPort]``` it can be typed in like shown below
 
-![] sqlpad_url.PNG
+![](sqlpad_url.PNG)
 
