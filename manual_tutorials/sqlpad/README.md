@@ -82,7 +82,7 @@ Although we have a UI, we don't have anything for the UI to affect. So we will m
 Now that wr have SQLpad ready, we need a mysql container to connect to. Below is a template for the code to create a mysql container.
 
 ```
-docker run --name=[mysqlContainerName] --publish [desiredPort] --env MYSQL_ROOT_PASSWORD=[yourMysqlRootPass] --detach --volume [your/desired/file/path] --network=[yourNetworkName] -e MYSQL_HOST_AUTH_METHOD=trust mysql/mysql-server:[desiredMysqlVersion]
+docker run --name=[mysqlContainerName] --publish [desiredPort] --env MYSQL_ROOT_PASSWORD=[yourMysqlRootPass] --detach --network=[yourNetworkName] -e MYSQL_HOST_AUTH_METHOD=trust mysql/mysql-server:[desiredMysqlVersion]
 ```
 
 Below explains what each portion of this code does
@@ -92,7 +92,6 @@ Below explains what each portion of this code does
 - --publish [desiredPort] - Sets the port you want your container to work through
 - --env MYSQL_ROOT_PASSWORD=[yourMysqlRootPass] - Sets a root password for your mysql container
 - --detach - tells docker to run this in the background of your terminal
-- --volume [your/desired/file/path] - tells docker where to store the ------------
 - --network=[yourNetworkName] - Tells the container to use a network
 - -e MYSQL_HOST_AUTH_METHOD=trust - Makes mysql trust your inputs that could endanger data
 - mysql/mysql-server:[desiredMysqlVersion] - Specifies what type of container your making and which version
@@ -100,7 +99,7 @@ Below explains what each portion of this code does
 Below is the code we will use for this example
 
 ```
-docker run --name=pickle --publish 331:331 --env MYSQL_ROOT_PASSWORD=mysqlpass --detach --volume /root/docker/mysql1/conf.d:/etc/mysql/conf.d --network=mynet -e MYSQL_HOST_AUTH_METHOD=trust mysql/mysql-server:latest
+docker run --name=pickle --publish 331:331 --env MYSQL_ROOT_PASSWORD=mysqlpass --detach --network=mynet -e MYSQL_HOST_AUTH_METHOD=trust mysql/mysql-server:latest
 ```
 
 now if you run ```docker ps``` you should have your sqlpad container and your mysql container
@@ -151,3 +150,15 @@ GRANT ALL ON *.* TO 'root'@'%';
 ```
 
 Now we have our mysql container ready to connect to sqlpad.
+
+to see your detailed network information for docker use the template below.
+
+```
+docker network inspect [yourNetworkName]
+```
+
+For this example we can use the code
+
+```
+docker network inspect mynet
+```
