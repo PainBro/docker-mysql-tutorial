@@ -22,7 +22,7 @@ create table bikedata (
   cnt int);
 
 
-LOAD DATA INFILE '/var/lib/mysql-files/bike_hourly.csv' 
+LOAD DATA INFILE '/var/lib/mysql-files/data/bike_hourly.csv' 
 INTO TABLE bikedata 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'

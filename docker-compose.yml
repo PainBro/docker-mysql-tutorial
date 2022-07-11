@@ -9,7 +9,7 @@ services:
     volumes:
       # - ./mysql_init/1.sql:/docker-entrypoint-initdb.d/1.sql
       - ./mysql_init/:/docker-entrypoint-initdb.d/
-      - ./data_for_mysql/:/var/lib/mysql-files/
+      - ./data_for_mysql/:/var/lib/mysql-files/data/
 
       # - ./volumeToAttach:/mysqldb
     #   # - ./var/lib/mysql-files:/var/lib/mysql-files/
