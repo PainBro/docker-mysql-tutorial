@@ -180,9 +180,11 @@ Now that we've done that, we can use the IPv4 address for our mysql container as
 
 Once you've put that in, put "root" as the username and your mysql password as the password.
 
-![](sqlpad_browser1.PNG)
+![](sqlpad_connect1.PNG)
 
 Then scroll donw and check the box labeled "Do not validate server certificate. (Don't use this for production)"
+
+![](sqlpad_connect2.PNG)
 
 Hit test and you should get a green checkmark. Hit save, and your done. 
 
