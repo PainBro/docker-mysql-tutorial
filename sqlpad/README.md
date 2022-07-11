@@ -117,9 +117,37 @@ docker exec -it [yourMysqlContainerName] mysql -uroot -p[yourMysqlRootPass]
 Below is the code for our example
 
 ```
-docker exec -it pickle mysql -uroot -p
+docker exec -it pickle mysql -uroot -pmysqlpass
 ```
 
 This should pull up a mysql terminal like shown below.
 
 ![](sqlpad_mysql.PNG)
+
+Now in the mysql terminal, we can put in some code to open up the connection capabilities
+
+First, we want to tell it that we are wanting to connect to the root, we can do that with the code below
+
+```
+update mysql.user set host = '%' where user='root';
+```
+
+Now, we want to change our user to be the root host, to do that we will use the template below.
+
+```
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '[yourMysqlRootPass]';
+```
+
+Below is the code we are using for the example.
+
+```
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'mysqlpass';
+```
+
+you may run into an error if thats the case, run the code below then try again
+
+```
+GRANT ALL ON *.* TO 'root'@'%';
+```
+
+Now we have our mysql container ready to connect to sqlpad.
