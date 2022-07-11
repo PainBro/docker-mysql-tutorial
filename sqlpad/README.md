@@ -21,6 +21,17 @@ docker network create -d bridge mynet
 
 In this example, you will see, the name we gave to our network was "mynet".
 
+We can check our docker networks using ```docker network ls``` you should see something similar to this with your network in it.
+
+```
+NETWORK ID     NAME      DRIVER    SCOPE
+5bc4dc5b030c   bridge    bridge    local
+277c3dae453e   host      host      local
+3e3c5cd915d0   mynet     bridge    local
+c1bbaccb81c9   none      null      local
+```
+
+
 
 ## Setting up SQLpad
 Now that we have a network, we will need to have something to connect. 
