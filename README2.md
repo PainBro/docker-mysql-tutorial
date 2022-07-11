@@ -17,5 +17,9 @@
 
 3. Open a browser to <code>localhost:3000</code> to open sqlpad (may need to wait a few seconds for the script to finish running)
 
+The login (as was setup) 
+* email - admin@sql.pad
+* password - password123
+
 ### Resources
 * 
